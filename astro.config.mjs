@@ -1,7 +1,7 @@
 import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 import keystatic from '@keystatic/astro';
-import vercel from '@astrojs/vercel/serverless';
+import vercel from '@astrojs/vercel';
 
 // Determine build mode:
 // - GitHub Pages: SKIP_KEYSTATIC=true → static build, no Keystatic
