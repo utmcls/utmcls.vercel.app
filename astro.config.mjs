@@ -5,17 +5,10 @@ import keystatic from '@keystatic/astro';
 import vercel from '@astrojs/vercel';
 import node from '@astrojs/node';
 
-// Determine build mode:
-// - GitHub Pages: SKIP_KEYSTATIC=true → static build, no Keystatic
-// - Vercel: VERCEL=1 → server mode with Keystatic Admin UI
-// - Local dev: neither set → server mode with Keystatic (for local editing)
-const isGitHubPagesBuild = process.env.SKIP_KEYSTATIC === 'true';
+// Vercel sets VERCEL=1. Local dev uses Node adapter for SSR.
 const isVercel = process.env.VERCEL === '1';
-const enableKeystatic = !isGitHubPagesBuild; // Enable in Vercel and local dev
-
-// Keystatic requires server output to function properly (for Admin UI and API routes)
-// Only use static output for GitHub Pages builds where Keystatic is disabled
-const useServerOutput = enableKeystatic || isVercel;
+// Site URL for sitemaps, RSS, etc. Set PUBLIC_SITE_URL in Vercel (or use custom domain).
+const siteUrl = process.env.PUBLIC_SITE_URL;
 
 // https://astro.build/config
 export default defineConfig({
@@ -46,19 +39,13 @@ export default defineConfig({
     }),
 
     react(),
-    // Enable Keystatic on Vercel and local dev, disable for GitHub Pages builds
-    ...(enableKeystatic ? [keystatic()] : []),
+    keystatic(),
   ],
-  // Use server mode when Keystatic is enabled or on Vercel, static for GitHub Pages only
-  output: useServerOutput ? 'server' : 'static',
-  // Use Vercel adapter on Vercel, Node adapter for local SSR dev, no adapter for static builds
-  adapter: isVercel ? vercel() : (useServerOutput ? node({ mode: 'standalone' }) : undefined),
-  site: 'https://utmcls.github.io',
+  output: 'server',
+  adapter: isVercel ? vercel() : node({ mode: 'standalone' }),
+  site: siteUrl,
   base: '/',
-  // Server config for local development (not relevant for Vercel)
-  // accept connections from both localhost and 127.0.0.1
-  server: !isVercel ? {
-    host: true,
-    port: 4321,
-  } : undefined,
+  server: !isVercel
+    ? { host: true, port: 4321 }
+    : undefined,
 });

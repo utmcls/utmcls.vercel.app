@@ -21,7 +21,7 @@ This meets objectives 1, 3, and 4
 *(Next JS was considered, but violates objective 1 and probably 3)*
 
 - Meant for content-oriented sites
-- Supports static websites (SSR is also supported, but does not work with Github Pages)
+- Supports static and server-rendered sites; this project uses server mode on Vercel for Keystatic and API routes
 - Light on the javascript, but supports "islands" where stuff like react components can be inserted
 
 ### Content Management System: Keystatic
@@ -31,10 +31,11 @@ This meets objectives 1, 3, and 4
 - Instead of editing the raw files, provides a form-based UI
 - Completely free, unless we use Keystatic Cloud (we won't)
 
-### Hosting: Github Pages
+### Hosting: Vercel
 
-- What was decided from the start
-- Free monetarily and also hassle-free (objectives 1 and 3)
+- Single deployment: site + Keystatic admin + serverless functions
+- Free tier is sufficient for this project (objectives 1 and 3)
+
 
 ### Styling: Tailwind CSS
 
