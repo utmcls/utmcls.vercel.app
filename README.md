@@ -35,6 +35,7 @@ This meets objectives 1, 3, and 4
 
 - Single deployment: site + Keystatic admin + serverless functions
 - Free tier is sufficient for this project (objectives 1 and 3)
+- **Production content**: In server mode, the site reads content from GitHub at request time using a Github PAT. Without it, events, team, CTA, etc. will be empty in prod.
 
 
 ### Styling: Tailwind CSS
