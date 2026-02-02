@@ -1,6 +1,7 @@
 import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 import react from '@astrojs/react';
+import markdoc from '@astrojs/markdoc';
 import keystatic from '@keystatic/astro';
 import vercel from '@astrojs/vercel';
 import node from '@astrojs/node';
@@ -8,7 +9,8 @@ import node from '@astrojs/node';
 // Vercel sets VERCEL=1. Local dev uses Node adapter for SSR.
 const isVercel = process.env.VERCEL === '1';
 // Site URL for sitemaps, RSS, etc. Set PUBLIC_SITE_URL in Vercel (or use custom domain).
-const siteUrl = process.env.PUBLIC_SITE_URL;
+// Fallback for local dev so Keystatic and other integrations get a valid base URL.
+const siteUrl = process.env.PUBLIC_SITE_URL ?? (isVercel ? undefined : 'http://localhost:4321');
 
 // https://astro.build/config
 export default defineConfig({
@@ -39,6 +41,7 @@ export default defineConfig({
     }),
 
     react(),
+    markdoc(),
     keystatic(),
   ],
   output: 'server',

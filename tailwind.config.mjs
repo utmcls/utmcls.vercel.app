@@ -1,37 +1,51 @@
+import typography from '@tailwindcss/typography';
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Michroma', 'sans-serif'],
-        body: ['Rajdhani', 'sans-serif'],
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+        mono: ['ui-monospace', 'monospace'],
       },
       colors: {
-        // Design system colors
-        // Current values are placeholders
-        background: {
-          DEFAULT: '#0a0a0a',
-          dark: '#000000',
-        },
+        background: 'var(--color-background)',
         foreground: {
-          DEFAULT: '#ffffff',
-          muted: '#cccccc',
+          DEFAULT: 'var(--color-foreground)',
+          muted: 'var(--color-foreground-muted)',
         },
-        // Other colors here
+        primary: {
+          DEFAULT: 'var(--color-primary)',
+          foreground: 'var(--color-primary-foreground)',
+        },
+        accent: {
+          DEFAULT: 'var(--color-accent)',
+          foreground: 'var(--color-accent-foreground)',
+        },
+        border: 'var(--color-border)',
+        muted: {
+          DEFAULT: 'var(--color-muted)',
+          foreground: 'var(--color-muted-foreground)',
+        },
+        card: 'var(--color-card)',
+        footer: {
+          DEFAULT: 'var(--color-footer-bg)',
+          foreground: 'var(--color-footer-foreground)',
+          'foreground-muted': 'var(--color-footer-foreground-muted)',
+          strip: 'var(--color-footer-strip-bg)',
+          'strip-foreground': 'var(--color-footer-strip-foreground)',
+        },
+        tag: {
+          workshop: '#38bdf8',
+          lecture: '#22c55e',
+          hackathon: '#ec4899',
+        },
       },
-      typography: {
-        // Typography scale
-        fontSize: {
-        },
-        letterSpacing: {
-          wide: '0.1em',
-          wider: '0.05em',
-        },
-      },
-      spacing: {
+      boxShadow: {
+        card: '0 1px 3px 0 rgb(0 0 0 / 0.06), 0 1px 2px -1px rgb(0 0 0 / 0.06)',
       },
     },
   },
-  plugins: [],
+  plugins: [typography],
 };

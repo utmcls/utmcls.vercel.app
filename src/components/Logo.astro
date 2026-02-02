@@ -1,0 +1,9 @@
+---
+interface Props {
+  class?: string;
+}
+const { class: className = '' } = Astro.props;
+---
+<a href="/" class={`inline-flex items-center hover:opacity-90 ${className}`} aria-label="UTMCLS home">
+  <img src="/icons/logo.png" alt="UTMCLS" class="h-14 w-auto object-contain" />
+</a>

@@ -1,3 +1,63 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/*
+ * Theme: semantic colors via CSS variables for easy light/dark switching.
+ * Default is dark-accent theme. Add data-theme="light" on <html> for light theme later.
+ */
+:root {
+  /* Page */
+  --color-background: #ffffff;
+  --color-foreground: #1e293b;
+  --color-foreground-muted: #64748b;
+  --color-border: #e2e8f0;
+  --color-muted: #f1f5f9;
+  --color-muted-foreground: #64748b;
+  --color-card: #ffffff;
+
+  /* Brand / accent */
+  --color-primary: #0f172a;
+  --color-primary-foreground: #ffffff;
+  --color-accent: #38bdf8;
+  --color-accent-foreground: #0f172a;
+
+  /* Footer: main area = same light gray as CTA (muted), bottom strip = blue */
+  --color-footer-bg: #f1f5f9;
+  --color-footer-foreground: #1e293b;
+  --color-footer-foreground-muted: #64748b;
+  --color-footer-strip-bg: #38bdf8;
+  --color-footer-strip-foreground: #0f172a;
+
+  /* Event type tags (unchanged by theme for now) */
+  --color-tag-workshop: #38bdf8;
+  --color-tag-lecture: #22c55e;
+  --color-tag-hackathon: #ec4899;
+}
+
+/* Future: light theme override
+[data-theme="light"] {
+  --color-background: #ffffff;
+  --color-foreground: #0f172a;
+  ...
+}
+*/
+
+/* Google Material Symbols Outlined (icon font) */
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+  }
+}

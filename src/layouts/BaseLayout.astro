@@ -1,11 +1,12 @@
 ---
-
 interface Props {
   title: string;
   description?: string;
 }
 
 const { title, description = 'UTM Computational Linguistics Society' } = Astro.props;
+import '../styles/global.css';
+import Logo from '../components/Logo.astro';
 ---
 
 <!doctype html>
@@ -16,15 +17,28 @@ const { title, description = 'UTM Computational Linguistics Society' } = Astro.p
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    
-    <!-- Google Fonts -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Michroma&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <title>{title}</title>
   </head>
-  <body class="bg-background text-foreground min-h-screen font-sans">
+  <body class="bg-background text-foreground min-h-screen font-sans antialiased">
+    <header class="sticky top-0 z-10 border-b border-border bg-background">
+      <nav class="mx-auto flex max-w-6xl h-16 items-center justify-between gap-4 px-5" aria-label="Main">
+        <Logo />
+        <div class="flex items-center gap-6">
+          <a href="/#activities" class="text-sm text-muted-foreground hover:text-foreground">/activities</a>
+          <a href="/#events" class="text-sm text-muted-foreground hover:text-foreground">/events</a>
+          <a href="/#media" class="text-sm text-muted-foreground hover:text-foreground">/media</a>
+          <a href="/#team" class="text-sm text-muted-foreground hover:text-foreground">/team</a>
+          <a href="/#media" class="rounded-lg bg-accent px-4 py-2 text-sm font-medium text-accent-foreground hover:opacity-90">Join Us</a>
+        </div>
+      </nav>
+    </header>
     <slot />
   </body>
 </html>
