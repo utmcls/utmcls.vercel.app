@@ -1,0 +1,34 @@
+---
+export const prerender = true;
+
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="CompLing Undergraduate Lab – UTM CLS"
+  description="Placeholder page for the UTM CompLing Undergraduate Lab."
+>
+  <main class="mx-auto max-w-3xl px-5 py-16 md:py-24">
+    <p class="mb-3 text-sm font-medium uppercase tracking-wide text-accent">CompLing Undergraduate Lab</p>
+    <h1 class="mb-6 text-4xl font-bold tracking-tight text-primary md:text-5xl">
+      Lab page <span class="text-accent">(coming soon)</span>
+    </h1>
+    <div class="prose prose-slate max-w-none text-muted-foreground">
+      <p>
+        This is placeholder copy while we figure out the real pitch. Think of it as the draft README for a space where
+        undergrads actually build comp-ling stuff—not just talk about it in theory.
+      </p>
+      <p>
+        Semester-long projects, grad mentors, messy data, late-night debugging, and hopefully something you can put on a
+        poster or a portfolio. Details on how to join, what we&apos;re working on, and who to bug will land here soon.
+      </p>
+      <p>For now: yes, the lab exists on the website. No, this page is not the final form. Check back.</p>
+    </div>
+    <a
+      href="/"
+      class="mt-10 inline-flex items-center justify-center rounded-lg bg-accent px-6 py-3 font-medium text-accent-foreground hover:opacity-90"
+    >
+      ← Back to home
+    </a>
+  </main>
+</BaseLayout>
