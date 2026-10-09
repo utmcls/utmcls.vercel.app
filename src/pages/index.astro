@@ -171,38 +171,53 @@ const teamListWithImages = teamList
         <p class="mb-10 max-w-2xl text-muted-foreground">
           We represent the interests of students enrolled in UTM&apos;s certificate in computational linguistics. We strive to build a community for students to connect, code, hang out and cultivate an interest in compling!
         </p>
-        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          <article class="rounded-xl border border-border bg-card p-6 shadow-card">
-            <div class="mb-4 flex items-center justify-center text-accent" aria-hidden>
-              <img src="/icons/code-solid-full.svg" alt="" class="size-12" loading="lazy" decoding="async" />
+        <div class="flex flex-col gap-6">
+          <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <article class="rounded-xl border border-border bg-card p-6 shadow-card">
+              <div class="mb-4 flex items-center justify-center text-accent" aria-hidden>
+                <img src="/icons/code-solid-full.svg" alt="" class="size-12" loading="lazy" decoding="async" />
+              </div>
+              <h3 class="mb-2 font-semibold text-foreground">Coding Workshops</h3>
+              <p class="mb-4 text-sm text-muted-foreground">Hands-on sessions with Python, NLTK, spaCy, and Hugging Face transformers suitable for all skill levels.</p>
+              <code class="block text-xs text-muted-foreground">&gt; import torch</code>
+            </article>
+            <article class="rounded-xl border border-border bg-card p-6 shadow-card">
+              <div class="mb-4 flex items-center justify-center text-accent" aria-hidden>
+                <img src="/icons/microphone-solid-full.svg" alt="" class="size-12" loading="lazy" decoding="async" />
+              </div>
+              <h3 class="mb-2 font-semibold text-foreground">Guest Lectures</h3>
+              <p class="mb-4 text-sm text-muted-foreground">Learn from graduate students and researchers about their latest work in Computational Linguistics.</p>
+              <code class="block text-xs text-muted-foreground">&gt; speaker.listen()</code>
+            </article>
+            <article class="rounded-xl border border-border bg-card p-6 shadow-card">
+              <div class="mb-4 flex items-center justify-center text-accent" aria-hidden>
+                <img src="/icons/briefcase-solid-full.svg" alt="" class="size-12" loading="lazy" decoding="async" />
+              </div>
+              <h3 class="mb-2 font-semibold text-foreground">Career Development</h3>
+              <p class="mb-4 text-sm text-muted-foreground">Resume reviews, interview prep for AI roles, and networking with alumni.</p>
+              <code class="block text-xs text-muted-foreground">&gt; job.apply()</code>
+            </article>
+          </div>
+          <article class="rounded-xl border border-sky-600/30 bg-gradient-to-r from-accent to-sky-400 px-6 py-8 shadow-card md:flex md:items-center md:gap-10 md:px-10 md:py-10 lg:py-12">
+            <div class="mb-6 flex shrink-0 items-center justify-center md:mb-0" aria-hidden>
+              <div class="flex size-20 items-center justify-center rounded-2xl bg-white/15 md:size-24">
+                <img src="/icons/microscope-solid-full.svg" alt="" class="size-12 brightness-0 invert md:size-14" loading="lazy" decoding="async" />
+              </div>
             </div>
-            <h3 class="mb-2 font-semibold text-foreground">Coding Workshops</h3>
-            <p class="mb-4 text-sm text-muted-foreground">Hands-on sessions with Python, NLTK, spaCy, and Hugging Face transformers suitable for all skill levels.</p>
-            <code class="block text-xs text-muted-foreground">&gt; import torch</code>
-          </article>
-          <article class="rounded-xl border border-border bg-card p-6 shadow-card">
-            <div class="mb-4 flex items-center justify-center text-accent" aria-hidden>
-              <img src="/icons/microscope-solid-full.svg" alt="" class="size-12" loading="lazy" decoding="async" />
+            <div class="min-w-0 flex-1">
+              <h3 class="mb-3 text-2xl font-bold tracking-tight text-accent-foreground md:text-3xl">
+                CompLing Undergraduate Lab
+              </h3>
+              <p class="mb-6 max-w-3xl text-sm leading-relaxed text-sky-100 md:text-base">
+                Collaborate on semester-long research projects. Opportunities to work with graduate mentors.
+              </p>
+              <a
+                href="/#team"
+                class="inline-flex items-center justify-center rounded-lg bg-background px-6 py-3 text-sm font-medium text-[var(--color-accent)] hover:opacity-90 md:text-base"
+              >
+                Learn more →
+              </a>
             </div>
-            <h3 class="mb-2 font-semibold text-foreground">Research Projects</h3>
-            <p class="mb-4 text-sm text-muted-foreground">Collaborate on semester-long research projects. Opportunities to work with graduate mentors.</p>
-            <code class="block text-xs text-muted-foreground">&gt; model.train()</code>
-          </article>
-          <article class="rounded-xl border border-border bg-card p-6 shadow-card">
-            <div class="mb-4 flex items-center justify-center text-accent" aria-hidden>
-              <img src="/icons/microphone-solid-full.svg" alt="" class="size-12" loading="lazy" decoding="async" />
-            </div>
-            <h3 class="mb-2 font-semibold text-foreground">Guest Lectures</h3>
-            <p class="mb-4 text-sm text-muted-foreground">Learn from graduate students and researchers about their latest work in Computational Linguistics.</p>
-            <code class="block text-xs text-muted-foreground">&gt; speaker.listen()</code>
-          </article>
-          <article class="rounded-xl border border-border bg-card p-6 shadow-card">
-            <div class="mb-4 flex items-center justify-center text-accent" aria-hidden>
-              <img src="/icons/briefcase-solid-full.svg" alt="" class="size-12" loading="lazy" decoding="async" />
-            </div>
-            <h3 class="mb-2 font-semibold text-foreground">Career Development</h3>
-            <p class="mb-4 text-sm text-muted-foreground">Resume reviews, interview prep for AI roles, and networking with alumni.</p>
-            <code class="block text-xs text-muted-foreground">&gt; job.apply()</code>
           </article>
         </div>
       </div>
