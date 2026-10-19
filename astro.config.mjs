@@ -100,6 +100,16 @@ export default defineConfig({
   output: 'server',
   adapter: isVercel ? vercel() : node({ mode: 'standalone' }),
   site: siteUrl,
+  // On Vercel the function's Host is localhost. Astro only trusts
+  // x-forwarded-host when the public host is listed here. Without this,
+  // Keystatic sends GitHub redirect_uri=https://localhost/... and GitHub
+  // rejects it as not associated with the app.
+  security: {
+    allowedDomains: [
+      { hostname: 'utmcls.vercel.app', protocol: 'https' },
+      { hostname: '*.vercel.app', protocol: 'https' },
+    ],
+  },
   base: '/',
   server: !isVercel
     ? { host: true, port: 4321 }
